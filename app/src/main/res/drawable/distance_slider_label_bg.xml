@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style android:name="SliderLabelStyle"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:name="android:textBackground" >
+<!--        @color/app_blue_color-->
+    </item>
+</style>

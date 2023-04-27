@@ -7,15 +7,18 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.example.blackcoffer.Adapter.ExploreTabsAdapter
+import com.example.blackcoffer.MainActivity
 import com.example.blackcoffer.R
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
-class ExploreFragment : Fragment() {
+class ExploreFragment(private val parentActivity: MainActivity) : Fragment() {
 
     private lateinit var exploreTabs: TabLayout
     private lateinit var exploreTabsAdapter: ExploreTabsAdapter
     private lateinit var exploreTabsViewPager: ViewPager2
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,7 +43,7 @@ class ExploreFragment : Fragment() {
         exploreTabs.addTab(exploreTabs.newTab(), 1)
         exploreTabs.addTab(exploreTabs.newTab(), 2)
         exploreTabsAdapter =
-            ExploreTabsAdapter(requireFragmentManager(), this@ExploreFragment.lifecycle)
+            ExploreTabsAdapter(requireFragmentManager(), this@ExploreFragment.lifecycle,parentActivity)
         exploreTabsViewPager.setAdapter(exploreTabsAdapter)
 
 

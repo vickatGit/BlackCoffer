@@ -98,6 +98,26 @@
             app:layout_constraintStart_toStartOf="parent"
             app:menu="@menu/bottom_nav_menu" />
 
+        <include
+            android:id="@+id/friends_filter"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            layout="@layout/friends_filter_layout"/>
+        <include
+            android:id="@+id/job_seeker_filter"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            layout="@layout/friends_filter_layout"/>
+        <include
+            android:id="@+id/job_poster_filter"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            layout="@layout/friends_filter_layout"/>
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -112,6 +132,27 @@
 
 
     </com.google.android.material.navigation.NavigationView>
+
+    <include
+        android:id="@+id/friends_filter_layout"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/friends_filter_layout"/>
+
+    <include
+        android:id="@+id/job_poster_layout"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/job_poster_filter_layout"/>
+
+    <include
+        android:id="@+id/job_seeker_layout"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/job_seekers_filter_layout"/>
 
 
 </androidx.drawerlayout.widget.DrawerLayout>

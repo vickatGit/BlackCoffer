@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:paddingTop="20dp"
+    tools:context=".Fragment.RefineFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:scrollbars="none"
+        android:overScrollMode="never"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:paddingHorizontal="30dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/availabilty_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Select Your Availability"
+                android:textColor="@color/app_medium_blue_color"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/availability_container"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:hint="Available | Hey Let Us Connect"
+                android:textColorHint="@color/app_blue_color"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxStrokeColor="@color/app_blue_color"
+                app:boxStrokeWidth="0.7dp"
+                app:endIconTint="@color/app_blue_color"
+                app:hintEnabled="false"
+                app:hintTextColor="@color/app_blue_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:boxStrokeWidthFocused="0.7dp"
+                app:layout_constraintStart_toStartOf="@+id/availabilty_info"
+                app:layout_constraintTop_toBottomOf="@+id/availabilty_info">
+
+                <AutoCompleteTextView
+                    android:id="@+id/availability"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/app_medium_blue_color"
+                    android:padding="0dp"
+                    android:textSize="13sp"
+                    android:inputType="none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/status_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Add Your Status"
+                android:textColor="@color/app_medium_blue_color"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/availability_container"
+                app:layout_constraintTop_toBottomOf="@+id/availability_container" />
+
+            <EditText
+                android:id="@+id/status_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:padding="10dp"
+                android:textColor="@color/app_medium_blue_color"
+                android:background="@drawable/status_input_bg"
+                android:lines="3"
+                android:textSize="12sp"
+                android:gravity="top"
+                android:maxLength="250"
+
+                app:layout_constraintStart_toStartOf="@+id/status_info"
+                app:layout_constraintTop_toBottomOf="@id/status_info" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:text="/250"
+                android:textColor="@color/app_blue_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/status_container" />
+
+            <TextView
+                android:id="@+id/status_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:text="0"
+                android:textColor="@color/app_blue_color"
+                app:layout_constraintEnd_toStartOf="@+id/textView2"
+                app:layout_constraintTop_toBottomOf="@+id/status_container"
+                tools:text="47" />
+
+            <TextView
+                android:id="@+id/distance_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Select Hyper Local Distance"
+                android:textColor="@color/app_medium_blue_color"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/status_container"
+                app:layout_constraintTop_toBottomOf="@+id/status_count" />
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/distance_slider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:value="50"
+                android:valueFrom="0"
+                android:valueTo="100"
+                app:labelBehavior="floating"
+                app:trackHeight="2dp"
+
+                app:haloColor="@android:color/transparent"
+                app:layout_constraintTop_toBottomOf="@+id/distance_info"
+
+
+                app:thumbColor="@color/app_blue_color"
+                app:trackColorActive="@color/app_blue_color"
+                app:trackColorInactive="@color/app_grey_color" />
+
+
+            <TextView
+                android:id="@+id/km_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:text="1 Km"
+                android:layout_marginTop="-17dp"
+                android:textColor="@color/app_blue_color"
+                android:textSize="13sp"
+                app:layout_constraintStart_toStartOf="@+id/distance_slider"
+                app:layout_constraintTop_toBottomOf="@+id/distance_slider" />
+
+            <TextView
+                android:id="@+id/km_100"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:text="100 Km"
+                android:layout_marginTop="-17dp"
+                android:textColor="@color/app_blue_color"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="@+id/distance_slider"
+                app:layout_constraintTop_toBottomOf="@+id/distance_slider" />
+
+
+            <TextView
+                android:id="@+id/purpose_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Select Purposee"
+                android:textColor="@color/app_blue_color"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/status_container"
+                app:layout_constraintTop_toBottomOf="@+id/km_1" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/status_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:checkedChip="@+id/coffee"
+
+                app:selectionRequired="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/purpose_info">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/coffee"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp"
+                    android:text="Coffee"
+                    android:textColor="@color/purpose_chip_text_color"
+
+
+                    app:chipBackgroundColor="@color/purpose_chip_bg"
+                    app:chipStrokeColor="@color/app_blue_color"
+                    app:chipStrokeWidth="1dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/hobbies"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:text="Hobbies"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:clickable="true"
+                    android:textSize="13sp"
+                    android:textColor="@color/purpose_chip_text_color"
+
+
+                    app:chipBackgroundColor="@color/purpose_chip_bg"
+                    app:chipStrokeColor="@color/app_blue_color"
+                    app:chipStrokeWidth="1dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/business"
+                    android:layout_width="wrap_content"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_height="wrap_content"
+                    android:text="Business"
+                    android:clickable="true"
+                    android:textSize="13sp"
+                    android:textColor="@color/purpose_chip_text_color"
+
+
+                    app:chipBackgroundColor="@color/purpose_chip_bg"
+                    app:chipStrokeColor="@color/app_blue_color"
+                    app:chipStrokeWidth="1dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/movies"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Movies"
+                    android:clickable="true"
+                    android:textSize="13sp"
+                    android:textColor="@color/purpose_chip_text_color"
+
+
+                    app:chipBackgroundColor="@color/purpose_chip_bg"
+                    app:chipStrokeColor="@color/app_blue_color"
+                    app:chipStrokeWidth="1dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/friendship"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Friendship"
+                    android:clickable="true"
+                    android:textSize="13sp"
+                    android:textColor="@color/purpose_chip_text_color"
+
+
+                    app:chipBackgroundColor="@color/purpose_chip_bg"
+                    app:chipStrokeColor="@color/app_blue_color"
+                    app:chipStrokeWidth="1dp" />
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/dining"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dining"
+                    android:clickable="true"
+                    android:textSize="13sp"
+                    android:textColor="@color/purpose_chip_text_color"
+
+
+                    app:chipBackgroundColor="@color/purpose_chip_bg"
+                    app:chipStrokeColor="@color/app_blue_color"
+                    app:chipStrokeWidth="1dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/dating"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dating"
+                    android:clickable="true"
+                    android:textSize="13sp"
+                    android:textColor="@color/purpose_chip_text_color"
+
+
+                    app:chipBackgroundColor="@color/purpose_chip_bg"
+                    app:chipStrokeColor="@color/app_blue_color"
+                    app:chipStrokeWidth="1dp" />
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/matrimony"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Matrimony"
+                    android:clickable="true"
+                    android:textSize="13sp"
+                    android:textColor="@color/purpose_chip_text_color"
+
+
+                    app:chipBackgroundColor="@color/purpose_chip_bg"
+                    app:chipStrokeColor="@color/app_blue_color"
+                    app:chipStrokeWidth="1dp" />
+
+            </com.google.android.material.chip.ChipGroup>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingHorizontal="40dp"
+                android:text="Save &amp; Explore"
+                android:textAllCaps="false"
+                app:backgroundTint="@color/app_blue_color"
+                app:cornerRadius="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/status_group" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</FrameLayout>

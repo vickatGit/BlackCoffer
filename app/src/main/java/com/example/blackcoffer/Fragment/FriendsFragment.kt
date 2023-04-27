@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.blackcoffer.Adapter.FriendsAdapter
@@ -19,6 +21,13 @@ private const val ARG_PARAM2 = "param2"
 class FriendsFragment : Fragment() {
     private lateinit var friendRecycler:RecyclerView
     private lateinit var friendsAdapter:FriendsAdapter
+    private lateinit var filter:ImageView
+    private lateinit var filterLayout:View
+
+    interface FriendFilterListener {
+        fun friendsFilterClicked()
+    }
+    private var friendFilterListener: FriendFilterListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,14 +44,21 @@ class FriendsFragment : Fragment() {
         friendRecycler.layoutManager=LinearLayoutManager(this@FriendsFragment.context)
         friendsAdapter= FriendsAdapter()
         friendRecycler.adapter=friendsAdapter
+        filter.setOnClickListener {
+            friendFilterListener?.friendsFilterClicked()
+        }
 
         return view
     }
 
-    private fun initialiseViews(view: View?) {
-        friendRecycler= view?.findViewById(R.id.friends_recycler)!!
+    private fun initialiseViews(view: View) {
+        friendRecycler= view.findViewById(R.id.friends_recycler)
+        filter=view.findViewById(R.id.filter)
 
 
+    }
+    fun setFilterClickListener(listener: FriendFilterListener) {
+        friendFilterListener = listener
     }
 
 
